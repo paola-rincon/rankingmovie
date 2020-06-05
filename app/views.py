@@ -9,7 +9,7 @@ from django.contrib.auth import logout
 from django.contrib.auth import authenticate, login
 
 def index(request):
-    return render(request, 'app/inicio1.html')
+    return render(request, 'app/registro.html')
 
 # View anonimo
 
@@ -368,7 +368,6 @@ def post_login(request):
     username=request.POST['username']
     contraseña=request.POST['contraseña']
 
-    usuario = authenticate(username=username, password=contraseña)
 
     if usuario is not None:
         # Inicia la sesión del usuario en el sistema
@@ -396,13 +395,22 @@ def post_registro(request):
     correo=request.POST['correo']
     contraseña=request.POST['contraseña']
 
+  
+    try:
+        administrador=request.POST['administrados']
+        administrador='1'
+    except:
+
+    # usuario = authenticate(username=username, password=contraseña)
+
+
     usuario=User()
     usuario.username=username
     usuario.first_name=nombre
     usuario.last_name=apellido
     usuario.email=correo
     usuario.set_password(contraseña)
-
+    usuario.is_superuser(administrador)
   
     usuario.save()
 
