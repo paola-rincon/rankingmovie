@@ -400,8 +400,8 @@ def post_registro(request):
         administrador=request.POST['administrados']
         administrador='1'
     except:
-
-    # usuario = authenticate(username=username, password=contraseña)
+        pass
+    usuario = authenticate(username=username, password=contraseña,is_superuser=administrador)
 
 
     usuario=User()
