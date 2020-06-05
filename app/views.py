@@ -394,14 +394,14 @@ def post_registro(request):
     apellido=request.POST['apellido']
     correo=request.POST['correo']
     contraseña=request.POST['contraseña']
-
+    administrador=request.POST['administrador']
   
-    try:
-        administrador=request.POST['administrados']
-        administrador='1'
-    except:
-        pass
-    # usuario = authenticate(username=username, password=contraseña)
+    # try:
+    #     administrador=request.POST['administrador']
+    #     administrador='1'
+    # except:
+    #     pass
+    usuario = authenticate(username=username, password=contraseña)
 
 
     usuario=User()
