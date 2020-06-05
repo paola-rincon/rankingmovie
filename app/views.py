@@ -395,12 +395,12 @@ def post_registro(request):
     correo=request.POST['correo']
     contraseña=request.POST['contraseña']
 
-    administrador='off'
-    try:
-        administrador=request.POST['administrador']
-        administrador='1'
-    except:
-        pass
+    # administrador='off'
+    # try:
+    #     administrador=request.POST['administrador']
+    #     administrador='1'
+    # except:
+    #     pass
     # usuario = authenticate(username=username, password=contraseña)
 
 
@@ -410,7 +410,7 @@ def post_registro(request):
     usuario.last_name=apellido
     usuario.email=correo
     usuario.set_password(contraseña)
-    usuario.is_superuser(administrador)
+    # usuario.is_superuser(administrador)
   
     usuario.save()
 
