@@ -1,0 +1,77 @@
+{% extends "app/baseadmin.html"%}
+{% load static %}
+
+{% block titulo %}
+Categorias categoria
+{% endblock%}
+
+{% block contenido %}
+<h1 class="display-1">Crear categoria</h1>
+
+
+<div class="row no-gutters bg-light position-relative">
+    <div class="col-md-6 mb-md-0 p-md-4">
+       
+        <form action="{% url 'app:post_crear_categoria' %}" method="post">
+          {% csrf_token %}
+                <div class="form-group row">
+                  
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Nombre de categoria" name="nombre"> 
+                </div>
+                </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Agregar </button>
+              </div>
+            </div>
+           
+          </form>
+    </div>
+      <div class="col">
+          <table class="table table-striped projects">
+            <thead>
+                <tr>
+                    <th style="width: 80%">
+                        Categoria
+                    </th>
+                    <th style="width: 10%">
+                      Editar
+                    </th>
+                    <th style="width: 10%">
+                      Eliminar
+                    </th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+              {% for c in lista_categorias %}
+              <tr>
+                  <td>
+                    {{ c.nombre }}
+                  </td>
+                  
+                  <td class="project-state">
+                    <a class="btn btn-primary btn-sm" href="#">
+                        <i class="far fa-edit">editar</i>
+                    </a>
+                  </td>
+                  
+                  <td class="project-state">
+                    <a class="btn btn-primary btn-sm" href="#">
+                      <i class="fas fa-trash-alt"></i>
+                    </a>
+                  </td>
+              </tr>
+              {% endfor %} 
+            </tbody>
+        </table>
+      </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

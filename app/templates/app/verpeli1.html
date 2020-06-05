@@ -1,0 +1,191 @@
+{% extends "app/baseanonimo.html"%}
+{% load static %}
+
+{% block titulo %}
+{{ peli.titulo }}
+{% endblock%}
+
+{% block contenido %}
+
+
+
+<div class="row no-gutters bg-light position-relative">
+  <div >
+    <!-- <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Xb3E8eWZ1mk?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"><div><small><a href="https://youtubeembedcode.com/de/" allowfullscreen></iframe>
+    </div> -->
+  </div>
+  <div class="col-md-6 mb-md-0 p-md-4">
+    <h1>{{ peli.titulo }}</h1>
+        <h2 style="color: rgb(70, 208, 243);">Sipnosis</h2>
+        <p>{{ peli.sinopsis }}</p>
+        
+        
+        <div class="row">
+          <div class="col">
+            <h4 style="color: rgb(70, 208, 243);">Año:</h4>
+          </div>
+          <div>
+            <p>{{ peli.anio }}</p>
+          </div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h4 style="color: rgb(70, 208, 243);">Duración:</h4>
+          </div>
+          <div>
+            <p>{{ peli.duracion }}</p>
+          </div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+        
+        <div class="row">
+          <div class="col">
+            <h4 style="color: rgb(70, 208, 243);">Categoría:</h4>
+          </div>
+          <div>
+            <p>Drama, acción</p>
+          </div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+        
+        <div class="row">
+          <div class="col">
+            <h4 style="color: rgb(70, 208, 243);">Elenco:</h4>
+          </div>
+          <div>
+            <p>{{ peli.actores }}</p>
+          </div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h4 style="color: rgb(70, 208, 243);">En Cartelera:</h4>
+          </div>
+                    <div>
+              {%if peli.cartelera == 1%}
+                    <p>si</p>
+                {%else%}
+                    <p>no</p>
+              {% endif %}
+            
+          </div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h4 style="color: rgb(70, 208, 243);">Calificación:</h4>
+          </div>
+          <div>
+            <p>
+                <small>
+                  {% for r in promedio %}
+                    {% if r.pelicula == id %}
+                              {{ r.average_rating }}    
+                    {% endif %}
+                  {% endfor %}
+                  
+                </small>
+
+          </td></p>
+          </div>
+          
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          
+         
+            <a >
+              <select class="form-control" id="exampleFormControlSelect1"disabled>
+                <option selected>Voto</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </a>
+            <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          
+            <div class="card card-primary">   
+              <div class="card-header">
+                <h3 class="card-title">Comentarios</h3>   
+              </div>
+            <div class="card-footer card-comments">
+              <div class="card-comment">
+                <!-- User image -->
+                <!-- <img class="img-circle img-sm" src="../dist/img/user3-128x128.jpg" alt="User Image"> -->
+                {% for comen in comentario %}
+                <div class="comment-text">
+                  <span class="username">
+                    {{ comen.usuario_ip }}
+                    <span class="text-muted float-right">{{ comen.fechaHora }}</span>
+                  </span><!-- /.username -->
+                  {{ comen.pelicula_ip }}
+                </div>
+                <!-- /.comment-text -->
+              </div>
+              <!-- /.card-comment -->
+              
+                {% endfor %}
+                <!-- /.comment-text -->
+                
+              </div>
+              <!-- <div class="input-group">
+                <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                <span class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </span>
+              </div> -->
+              
+              <!-- /.card-comment -->
+            </div>
+          </div>
+        <!-- </div> -->
+
+  </div>
+</div>
+</div>
+
+
+
+  
+  
+  
+  
+  
+  <!-- /.widget-user -->
+  
+  
+  
+   
+
+
+{% endblock %}

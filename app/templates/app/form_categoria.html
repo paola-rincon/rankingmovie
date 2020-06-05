@@ -1,0 +1,21 @@
+{% extends "app/baseanonimo.html"%}
+{% load static %}
+
+{% block titulo %}
+Categorias anonimo
+{% endblock%}
+
+{% block contenido %}
+<h1 class="display-1">Categoria anonimo</h1>
+ 
+<form action="" method="post">
+    {% csrf_token %}
+    <label>Nombre</label>
+    <input type="text" name="nombre">
+    <br>
+    <button type="submit">Crear</button>
+</form>
+
+
+
+{% endblock %}

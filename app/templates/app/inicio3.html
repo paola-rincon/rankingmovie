@@ -1,0 +1,105 @@
+{% extends "app/baseadmin.html"%}
+{% load static %}
+
+{% block titulo %}
+Inicio Usuario
+{% endblock%}
+
+{% block contenido %}
+
+
+
+
+<div class="content">
+ 
+    <div class="row">
+      <div class="col"></div>
+        <div class="col">
+     
+            <!-- small card -->
+            <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>Agregar administrador</h3>
+                </div>
+                <a href="{% url 'app:crearadmin3' %}" class="small-box-footer">
+                  Agregar
+                </a>
+              </div>
+          </div>
+        
+          
+        
+      <div class="col">
+        <!-- small card -->
+        <div class="small-box bg-info">
+          <div class="inner">
+            <h3>Agregar película</h3>
+          </div>
+          <a href="{% url 'app:crearpelicula3' %}" class="small-box-footer">
+            Agregar
+          </a>
+         
+        </div>
+      </div>
+      
+      <!-- ./col -->
+      
+      
+      <div class="col">
+        <!-- small card -->
+        <div class="small-box bg-success">
+          <div class="inner">
+            <h3>Agregar categoría</h3>
+          </div>
+          <a href="{% url 'app:crearcategoria3' %}" class="small-box-footer">
+            Agregar
+          </a>
+        </div>
+      </div>
+      
+     
+      <div class="col">
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+  <ul>
+   
+  <!-- Content Wrapper. Contains page content -->
+  {% for c in lista_categorias %}
+  
+  <div class="content">
+        <div class="row">
+        <div class="col" >
+          <h1> {{ c.nombre }}</h1>
+        </div>
+        <div class="col-9" >
+            
+        </div>
+        
+    </div>
+    </div>
+    
+
+    
+    <div class="card-deck" style="margin: 20px 50px">
+      {% for p in c.peliculas.all %}
+      <div class="card text-white bg-info mb-3">
+        <div class="card-body">
+            <h3 class="card-title">{{ p.titulo }}</h3>
+            <p class="card-text">{{ p.anio }}</small></p>
+            <a href="{% url 'app:verpeli3' p.id %}"><button type="button" class="btn btn-outline-light" >Ver</button></a>
+         </div>
+       </div>
+      {% endfor %} 
+      
+    </div>
+    
+  </div>
+  {% endfor %} 
+
+
+{% endblock %}

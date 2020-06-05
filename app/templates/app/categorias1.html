@@ -1,0 +1,38 @@
+{% extends "app/baseanonimo.html"%}
+{% load static %}
+
+{% block titulo %}
+Categoria anonimo
+{% endblock%}
+
+{% block contenido %}
+<h1 class="display-1">Categorias anonimo</h1>
+
+
+
+<div class="content">
+  {% for c in lista_categorias %}
+    <div class="card-deck" style="margin: 20px 50px">
+      <div class="card">
+        <!--img src="/img/3.jpg" class="card-img-top" alt="..."-->
+        
+        <div class="card-body">
+          <h1 class="display-1">
+            <a href="{% url 'app:categoria1' c.id %}">
+            {{ c.nombre }}
+            </a>
+        </h1>   
+        </div>
+        
+      </div>
+     
+    </div>
+    {% endfor %} 
+  </div>
+
+ 
+  
+
+
+
+{% endblock %}

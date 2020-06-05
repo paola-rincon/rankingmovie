@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <title>
+        {% block titulo%}
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'app/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/adminlte.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/icheck-bootstrap.min.css' %}">
+    
+    <body class="hold-transition login-page">
+        <div class="login-box">
+          <div class="login-logo">
+            <a href="http://127.0.0.1:8000/app/inicio1/"><b>Ranking</b>Movie</a>
+          </div>
+          <!-- /.login-logo -->
+          <div class="card">
+            <div class="card-body login-card-body">
+              <p class="login-box-msg">{% block login-box%}
+                {% endblock %}</p>
+
+                {% block box%}
+
+                {% endblock %}
+              </div>
+          </div>
+        </div>
+    </body>

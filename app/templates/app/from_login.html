@@ -1,0 +1,57 @@
+{% extends "app/baselogin.html"%}
+{% load static %}
+
+{% block titulo %}
+login
+{% endblock%}
+
+{% block login-box%}
+Iniciar sesion
+{% endblock %}
+
+{% block box%}
+
+
+<form action="{% url 'app:post_login' %}" method="post">
+  {% csrf_token %}
+    <div class="input-group mb-3">
+      <input  class="form-control" placeholder="Username"name="username">
+      <div class="input-group-append">
+        <div class="input-group-text">
+          <span class="fas fa-envelope"></span>
+        </div>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <input type="password" class="form-control" placeholder="Contraseña" name="contraseña">
+      <div class="input-group-append">
+        <div class="input-group-text">
+          <span class="fas fa-lock"></span>
+        </div>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-8">
+        <div class="icheck-primary">
+          <input type="checkbox" id="remember">
+          <label for="remember">Recordar</label>
+        </div>
+      </div>
+      <!-- /.col -->
+      <div class="col-4">
+        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+      </div>
+      <!-- /.col -->
+    </div>
+  </form>
+  <!-- /.social-auth-links -->
+
+  <p class="mb-1">
+    <a href="{% url 'app:olvidecontraseña' %}">Se me olvido mi contraseña</a>
+  </p>
+  <p class="mb-0">
+    <a href="{% url 'app:registro' %}" class="text-center">Registrar</a>
+  </p>
+</form>
+{% endblock %}
+<!-- /.login-card-body -->

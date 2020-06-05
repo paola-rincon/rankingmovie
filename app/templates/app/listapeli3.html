@@ -1,0 +1,75 @@
+{% extends "app/baseadmin.html"%}
+{% load static %}
+
+{% block titulo %}
+Lista de peliculas
+{% endblock%}
+
+{% block contenido %}
+<h1 class="display-1">Lista de peliculas admin</h1>
+
+<a href="{% url 'app:crearpelicula3' %}" >  <button type="submit" class="btn btn-primary"> Crear pelicula</button> </a>
+<br>
+<br>
+
+<div class="col">
+    <table class="table table-striped projects">
+      <thead>
+          <tr>
+              <th style="width: 10%">
+                  Pelicula
+              </th>
+              <th style="width: 10%">
+                Año
+              </th>
+              <th style="width: 10%">
+                En cartelera
+              </th>
+              <th style="width: 5%">
+                Editar
+              </th>
+              <th style="width: 5%">
+                Eliminar
+              </th>
+              
+          </tr>
+      </thead>
+
+      <tbody>
+        {% for p in lista_peliculas%}
+          <tr>
+              <td>
+                {{ p.titulo }}
+              </td>
+              <td>
+                {{ p.anio }}
+              </td>
+              <td>
+                {% if p.enCartelera == 1 %}
+                  si
+                  {% else %}
+                     no
+                {% endif %}
+                
+              </td>
+              
+              <td class="project-state">
+                <a class="btn btn-primary btn-sm" href="#">
+                    <i class="far fa-edit">editar</i>
+                </a>
+              </td>
+              
+              <td class="project-state">
+                <a class="btn btn-primary btn-sm" href="#">
+                  <i class="fas fa-trash-alt"></i>
+                </a>
+              </td>
+              
+          </tr>
+          {% endfor %}          
+      </tbody>
+  </table>
+</div>
+
+
+{% endblock %}

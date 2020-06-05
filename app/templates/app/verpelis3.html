@@ -1,0 +1,60 @@
+{% extends "app/baseadmin.html"%}
+{% load static %}
+
+{% block titulo %}
+
+Lista de peliculas
+
+{% endblock%}
+
+{% block contenido %}
+            <h1 class="display-1">Lista de peliculas admin</h1>
+
+
+            <div class="col">
+                <table class="table table-striped projects">
+                <thead>
+                    <tr>
+                        <th style="width: 10%">
+                            Pelicula
+                        </th>
+                        <th style="width: 10%">
+                            Año
+                        </th>
+                        <th style="width: 10%">
+                            En cartelera
+                        </th>
+                        
+                        
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for p in lista_peli%}
+                    <tr>
+                        <td>
+                            <a href="{% url 'app:verpeli3' p.id %}">
+                                {{ p.titulo }}
+                            </a>
+                            
+                        </td>
+                        <td>
+                            {{ p.anio }}
+                        </td>
+                        <td>
+                            {% if p.enCartelera == 1 %}
+                            si
+                            {% else %}
+                                no
+                            {% endif %}
+                            
+                        </td>
+                        
+                    </tr>
+                    {% endfor %}          
+                </tbody>
+            </table>
+            </div>
+
+
+{% endblock %}

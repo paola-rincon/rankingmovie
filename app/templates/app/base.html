@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block titulo%}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'app/css/estilo.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>
+            Netflix
+        </h1>
+        <span>Tu mejor sitio de peliculas legales :v</span>
+    </header>
+
+{% block contenido%}
+{% endblock %}
+
+</body>

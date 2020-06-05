@@ -1,0 +1,32 @@
+{% extends "app/base.html"%}
+{% load static %}
+
+{% block titulo %}
+Peliculas
+{% endblock%} 
+
+{% block contenido %}
+    <h1>Peliculas</h1>
+    <h2>Holaaaaa</h2>
+    <p>El autor es {{autor}} y tiene {{edad}}</p>
+    <ul>
+        {% for pelicula in peliculas %}
+            <li>{{ pelicula }}</li>
+        {% endfor %}
+    </ul>
+    <img src="{% static 'app/img/tierno.jpg' %}" alt="tierno" width="150px" height="250px">
+    <table border="1" width="50%">
+        <tr>
+            <th>Actor</th>
+            <th>Edad</th>
+            <th>Pais</th>
+        </tr>
+        {% for actor in actores%}
+            <tr>
+                <td>{{actor.nombre}}</td>
+                <td>{{actor.edad}}</td>
+                <td>{{actor.pais}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

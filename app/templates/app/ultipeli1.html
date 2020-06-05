@@ -1,0 +1,31 @@
+{% extends "app/baseanonimo.html"%}
+{% load static %}
+
+{% block titulo %}
+Ultimas Peliculas anonimo
+{% endblock%}
+
+{% block contenido %}
+<h1 class="display-1">Ultimas Peliculas anonimo</h1>
+
+<div class="content">
+  <div class="card-deck" style="margin: 20px 50px">
+    {% for u in ulti %}
+   
+    <div class="card text-white bg-info mb-3">
+      <div class="card-body">
+          <h3 class="card-title"> {{ u.titulo }}</h3>
+          <p class="card-text">{{ u.anio }}</small></p>
+          <a href="{% url 'app:verpeli1' u.id %}" ><button type="button" class="btn btn-outline-light" >Ver</button></a>
+       </div>
+     </div>
+    {% endfor %} 
+    
+  </div> 
+ 
+     
+</div>
+  
+  
+
+{% endblock %}

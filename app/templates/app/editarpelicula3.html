@@ -1,0 +1,258 @@
+{% extends "app/baseadmin.html"%}
+{% load static %}
+
+{% block titulo %}
+Editar pelicula
+{% endblock%}
+
+{% block contenido %}
+<h1 class="display-1">Editar pelicula</h1>
+
+<div class="row no-gutters bg-light position-relative">
+    <div class="col-md-6 mb-md-0 p-md-4">
+       <form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Titulo</label>
+      
+      <input  class="form-control" id="exampleFormControlInput1"> 
+
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Sipnosis</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo omnis reprehenderit mollitia aliquid inventore culpa saepe. Unde, tempore! Maiores est numquam dicta ipsum totam, quae reprehenderit sapiente laborum eaque eveniet?</textarea>
+      </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Categorías</label>
+        
+                  <div class="form-check">
+                   <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="true">
+                        <label class="form-check-label" for="defaultCheck1">
+                         Acción
+                        </label>
+                   <br>
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <label class="form-check-label" for="defaultCheck1">
+                       Comedia
+                       </label>
+                    <br>
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked="true">
+                      <label class="form-check-label" for="defaultCheck1" >
+                       Animada
+                       </label>
+                    <br>
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <label class="form-check-label" for="defaultCheck1">
+                       Romance
+                       </label>
+                    
+    </div>
+
+        
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Año</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" >
+        <option selected>Seleccione</option>
+        <option value="1">1999</option>
+        <option value="2">2000</option>
+        <option value="3">2001</option>
+        <option value="4" >2002</option>
+        <option value="5">2003</option>
+        <option value="6">2004</option>
+        <option value="7">2005</option>
+        <option value="8">2006</option>
+        <option value="9">2007</option>
+        <option value="10">2008</option>
+        <option value="11">2009</option>
+        <option value="12">2010</option>
+        <option value="13">2011</option>
+        <option value="14">2012</option>
+        <option value="15">2013</option>
+        <option value="16">2014</option>
+        <option value="17">2015</option>
+        <option value="12">2016</option>
+        <option value="13">2017</option>
+        <option value="14">2018</option>
+        <option value="15" selected >2019</option>
+        <option value="16">2020</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Duración</label>
+        <p>Horas</p>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option selected>Seleccione</option>
+          <option value="1">1</option>
+          <option value="2" selected >2</option>
+          <option value="3">3</option>
+        </select>
+        <p>Minutos</p>
+        <select class="form-control" id="exampleFormControlSelect1">
+            <option selected>Seleccione</option>
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
+            <option value="6">06</option>
+            <option value="7">07</option>
+            <option value="8">08</option>
+            <option value="9">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14" selected>14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+            <option value="44">44</option>
+            <option value="45">45</option>
+            <option value="46">46</option>
+            <option value="47">47</option>
+            <option value="48">48</option>
+            <option value="49">49</option>
+            <option value="50">50</option>
+            <option value="51">51</option>
+            <option value="52">52</option>
+            <option value="53">53</option>
+            <option value="54">54</option>
+            <option value="55">55</option>
+            <option value="56">56</option>
+            <option value="57">57</option>
+            <option value="58">58</option>
+            <option value="59">59</option>
+          </select>
+
+          <p>Segundos</p>
+
+        <select class="form-control" id="exampleFormControlSelect1">
+            <option selected>Seleccione</option>
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
+            <option value="6">06</option>
+            <option value="7">07</option>
+            <option value="8">08</option>
+            <option value="9">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+            <option value="44">44</option>
+            <option value="45">45</option>
+            <option value="46"selected >46</option>
+            <option value="47">47</option>
+            <option value="48">48</option>
+            <option value="49">49</option>
+            <option value="50">50</option>
+            <option value="51">51</option>
+            <option value="52">52</option>
+            <option value="53">53</option>
+            <option value="54">54</option>
+            <option value="55">55</option>
+            <option value="56">56</option>
+            <option value="57">57</option>
+            <option value="58">58</option>
+            <option value="59">59</option>
+        
+          </select>
+      </div>
+    
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Elenco</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">personaje1, personaje 2</textarea>
+      </div>
+
+        
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">Cartelera</label>
+      </div>
+      <br>
+      <br>
+        <button type="submit" class="btn btn-primary mb-2">Actualizar pelicula</button>
+  </div>  
+  </form>
+  </div>
+
+  <div class="col">
+      <br>
+      <br>
+    <form>
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Imagen</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Video</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+          
+      </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "app/baseadmin.html"%}
+{% load static %}
+
+{% block titulo %}
+Lista de categoria
+{% endblock%}
+
+{% block contenido %}
+<h1 class="display-1">Lista de categoria admin</h1>
+
+<a href="{% url 'app:crearcategoria3' %}" >  <button type="submit" class="btn btn-primary"> Crear categoria</button> </a>
+<br>
+<br>
+<div class="col">
+    <table class="table table-striped projects">
+      <thead>
+          <tr>
+              <th style="width: 10%"style="text-align: center;">
+                Categoria
+              </th>
+              <th style="width: 10%"style="text-align: center;">
+                Editar
+              </th>
+              <th style="width: 10%"style="text-align: center;">
+                Eliminar
+              </th>
+              
+          </tr>
+      </thead>
+
+      <tbody>
+        {% for c in lista_categorias %}
+          <tr>
+              <td>
+                {{ c.nombre }}
+              </td>
+              
+              <td class="project-state">
+                <a class="btn btn-primary btn-sm" href="#">
+                    <i class="far fa-edit">editar</i>
+                </a>
+              </td>
+              
+              <td class="project-state">
+                <a class="btn btn-primary btn-sm" href="#">
+                  <i class="fas fa-trash-alt"></i>
+                </a>
+              </td>
+          </tr>
+          {% endfor %}          
+      </tbody>
+  </table>
+
+
+{% endblock %}
