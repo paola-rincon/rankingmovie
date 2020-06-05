@@ -410,7 +410,7 @@ def post_registro(request):
     usuario.last_name=apellido
     usuario.email=correo
     usuario.set_password(contraseña)
-    # usuario.is_superuser(administrador)
+    # usuario.is_superuser='1'
   
     usuario.save()
 
