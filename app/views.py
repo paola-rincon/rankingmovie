@@ -395,7 +395,7 @@ def post_registro(request):
     correo=request.POST['correo']
     contraseña=request.POST['contraseña']
 
-    administrador='0'
+    administrador='off'
     try:
         administrador=request.POST['administrador']
         administrador='1'
