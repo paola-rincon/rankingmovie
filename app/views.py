@@ -9,7 +9,7 @@ from django.contrib.auth import logout
 from django.contrib.auth import authenticate, login
 
 def index(request):
-    return HttpResponse("Hola, mundo")
+    return render(request, 'app/inicio1.html')
 
 # View anonimo
 

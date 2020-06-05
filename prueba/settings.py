@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'prueba.wsgi.application'
 # }
 
 # Datos de conexión
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+dc = {
+    psycopg2.connect: {
+        'ENGINE': 'd:jango.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'paola12345678',
@@ -98,7 +98,7 @@ DATABASES = {
 # Conexión a la base de datos
 # conexion = psycopg2.connect(**dc)
 
-# Cerrar la conexión
+# # Cerrar la conexión
 # conexion.close()
 
 # Password validation
